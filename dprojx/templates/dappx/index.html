@@ -1,0 +1,16 @@
+{% extends "dappx/base.html" %}
+<!-- <link rel="...."> So on and so forth -->
+{% block body_block %}
+<div class="container">
+  <div class="jumbotron">
+    <h1>Welcome to my Django Application !</h1>
+    {% if user.is_authenticated %}
+        <h2>Hello {{ user.username }}</h2>
+        <!-- <h3>{{ user.userprofileinfo.profile_pic.url }}</h3> -->
+        <img src="{{ user.userprofileinfo.profile_pic.url }}" alt="Test">
+    {% else %}
+        <h2>Register or Login if you'd like to</h2>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
